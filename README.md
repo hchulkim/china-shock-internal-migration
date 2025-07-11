@@ -9,44 +9,13 @@ Maintainer:
 
 ## Overview
 
-
 The code in this replication package constructs analysis files and results for the paper "The China shock and internal migration: Evidence from bilateral migration flows." All the codes are in `R` and run on a machine with 64GB of RAM.
-
 
 ## Data Availability and Provenance Statements
 
-> INSTRUCTIONS: Every README should contain a description of the origin (provenance), location and accessibility (data availability) of the data used in the article. These descriptions are generally referred to as "Data Availability Statements" (DAS). However, in some cases, there is no external data used.
-
-
-> INSTRUCTIONS: 
-> - When the authors are **secondary data users** (they did not generate the data), the provenance and DAS coincide, and should describe the condition under which (a) the current authors (b) any future users might access the data. 
->  The information should describe ALL data used, regardless of whether they are provided as part of the replication archive or not, and regardless of size or scope. The DAS should provide enough information that a replicator can obtain the data from the original source, even if the file is provided. 
-> For instance, if using GDP deflators, the source of the deflators (e.g. at the national statistical office) should also be listed here. If any of this information has been provided in a pre-registration, then a link to that registration may (partially) suffice.
->
-> DAS can be complex and varied. Examples are provided [here](https://social-science-data-editors.github.io/guidance/Requested_information_dcas.html), and below.
->
-> Importantly, if providing the data as part of the replication package, authors should be clear about whether they have the **rights** to distribute the data. Data may be subject to distribution restrictions due to sensitivity, IRB, proprietary clauses in the data use agreement, etc.
->
-> NOTE: DAS do not replace Data Citations (see [Guidance](https://social-science-data-editors.github.io/guidance/Data_citation_guidance.html)). Rather, they augment them. Depending on journal requirements and to some extent stylistic considerations, data citations should appear in the main article, in an appendix, or in the README. However, data citations only provide information **where** to find the data, not **how to access** those data. Thus, DAS augment data citations by going into additional detail that allow a researcher to assess cost, complexity, and availability over time of the data used by the original author.
-
-### Summary of Availability
-
-- All data used for analysis for this paper are publicly available.
-
-### Details on each Data Source
-
-> INSTRUCTIONS: For each data source, list the file that contains data from that source here; if providing combined/derived datafiles, list them separately after the DAS. For each data source or file, as appropriate, 
-> 
-> - Describe the format (open formats preferred, but some software-specific formats OK if open-source readers available): `.dta`, `.xlsx`, `.csv`, `netCDF`, etc.
-> - Provide a data dictionairy, either as part of the archive (list the file name), or at a URL (list the URL). Some formats are self-describing *if* they have the requisite information (e.g., `.dta` should have both variable and value labels).
-> - List availability within the package
-> - Use proper bibliographic references in addition to a verbose description (and provide a bibliography at the end of the README, expanding those references)
->
-> A summary in tabular form can be useful:
-
-| Data.Name  | Data.Files | Location | Provided | Citation |
+| Data.Name  | Data.Files | Location | Provided | Availability statement |
 | -- | -- | -- | -- | -- | 
-| “Current Population Survey 2018” | cepr_march_2018.dta | data/ | TRUE | CEPR (2018) |
+| “UN Comtrade date (Korea, )” | cepr_march_2018.dta | data/ | TRUE | CEPR (2018) |
 | “Provincial Administration Reports” | coast_simplepoint2.csv; rivers_simplepoint2.csv; RAIL_dummies.dta; railways_Dissolve_Simplify_point2.csv | Data/maps/ | TRUE | Administration (2017) |
 | “2017 SAT scores” | Not available | data/to_clean/ | FALSE | College Board (2020) |
 
@@ -77,124 +46,27 @@ Datafile: `data/raw/ipums_terra_2018.dta`
 
 Datafile: `data/raw/WV6_Data_Stata_v20180912.dta` (not provided)
 
-### Example for confidential data
-
-> INSTRUCTIONS: Citing and describing confidential data, in particular when it does not have a regular distribution channel or online landing page, can be tricky. A citation can be crafted ([see guidance](https://social-science-data-editors.github.io/guidance/FAQ.html#data-citation-without-online-link)), and the DAS should describe how to access, whom to contact (including the role of the particular person, should that person retire), and other relevant information, such as required citizenship status or cost.
-
-> The data for this project (DESE, 2019) are confidential, but may be obtained with Data Use Agreements with the Massachusetts Department of Elementary and Secondary Education (DESE). Researchers interested in access to the data may contact [NAME] at [EMAIL], also see www.doe.mass.edu/research/contact.html. It can take some months to negotiate data use agreements and gain access to the data. The author will assist with any reasonable replication attempts for two years following publication.
-
-### Example for confidential Census Bureau data
-
-> All the results in the paper use confidential microdata from the U.S. Census Bureau. To gain access to the Census microdata, follow the directions here on how to write a proposal for access to the data via a Federal Statistical Research Data Center: https://www.census.gov/ces/rdcresearch/howtoapply.html. 
-You must request the following datasets in your proposal:
->1. Longitudinal Business Database (LBD), 2002 and 2007
->2. Foreign Trade Database – Import (IMP), 2002 and 2007
-[...]
-
-(adapted from [Fort (2016)](https://doi.org/10.1093/restud/rdw057))
-
-### Example for preliminary code during the editorial process
-
-> Code for data cleaning and analysis is provided as part of the replication package. It is available at https://dropbox.com/link/to/code/XYZ123ABC for review. It will be uploaded to the [JOURNAL REPOSITORY] once the paper has been conditionally accepted.
-
-## Dataset list
-
-> INSTRUCTIONS: In some cases, authors will provide one dataset (file) per data source, and the code to combine them. In others, in particular when data access might be restrictive, the replication package may only include derived/analysis data. Every file should be described. This can be provided as a Excel/CSV table, or in the table below.
-
-> INSTRUCTIONS: While it is often most convenient to provide data in the native format of the software used to analyze and process the data, not all formats are "open" and can be read by other (free) software. Data should at a minimum be provided in formats that can be read by open-source software (R, Python, others), and ideally be provided in non-proprietary, archival-friendly formats. 
-
-> INSTRUCTIONS: All data files should be fully documented: variables/columns should have labels (long-form meaningful names), and values should be explained. This might mean generating a codebook, pointing at a public codebook, or providing data in (non-proprietary) formats that allow for a rich description. This is in particular important for data that is not distributable.
-
-> INSTRUCTIONS: Some journals require, and it is considered good practice, to provide synthetic or simulated data that has some of the key characteristics of the restricted-access data which are not provided. The level of fidelity may vary - it may be useful for debugging only, or it should allow to assess the key characteristics of the statistical/econometric procedure or the main conclusions of the paper.
-
-| Data file | Source | Notes    |Provided |
-|-----------|--------|----------|---------|
-| `data/raw/lbd.dta` | LBD | Confidential | No |
-| `data/raw/terra.dta` | IPUMS Terra | As per terms of use | Yes |
-| `data/derived/regression_input.dta`| All listed | Combines multiple data sources, serves as input for Table 2, 3 and Figure 5. | Yes |
-
-
 ## Computational requirements
 
-> INSTRUCTIONS: In general, the specific computer code used to generate the results in the article will be within the repository that also contains this README. However, other computational requirements - shared libraries or code packages, required software, specific computing hardware - may be important, and is always useful, for the goal of replication. Some example text follows. 
-
-> INSTRUCTIONS: We strongly suggest providing setup scripts that install/set up the environment. Sample scripts for [Stata](https://github.com/gslab-econ/template/blob/master/config/config_stata.do),  [R](https://github.com/labordynamicsinstitute/paper-template/blob/master/programs/global-libraries.R), [Julia](https://github.com/labordynamicsinstitute/paper-template/blob/master/programs/packages.jl) are easy to set up and implement. Specific software may have more sophisticated tools: [Python](https://pip.pypa.io/en/stable/user_guide/#ensuring-repeatability), [Julia](https://julia.quantecon.org/more_julia/tools_editors.html#Package-Environments).
+We strongly suggest following the [requirements]() to install and set up the environment to run the analysis. We also list some additional requirements (software, hardware, etc)
 
 ### Software Requirements
 
-> INSTRUCTIONS: List all of the software requirements, up to and including any operating system requirements, for the entire set of code. It is suggested to distribute most dependencies together with the replication package if allowed, in particular if sourced from unversioned code repositories, Github repos, and personal webpages. In all cases, list the version *you* used. All packages should be listed in human-readable form in this README, but should also be included in a setup or install script.
+- R 4.5.0
+  - Use `renv::restore()` to install all dependencies.
 
-- [ ] The replication package contains one or more programs to install all dependencies and set up the necessary directory structure. [HIGHLY RECOMMENDED]
+Portions of the code use bash scripting, which may require Linux or Unix-like terminal.
 
-- Stata (code was last run with version 15)
-  - `estout` (as of 2018-05-12)
-  - `rdrobust` (as of 2019-01-05)
-  - the program "`0_setup.do`" will install all dependencies locally, and should be run once.
-- Python 3.6.4
-  - `pandas` 0.24.2
-  - `numpy` 1.16.4
-  - the file "`requirements.txt`" lists these dependencies, please run "`pip install -r requirements.txt`" as the first step. See [https://pip.pypa.io/en/stable/user_guide/#ensuring-repeatability](https://pip.pypa.io/en/stable/user_guide/#ensuring-repeatability) for further instructions on creating and using the "`requirements.txt`" file.
-- Intel Fortran Compiler version 20200104
-- Matlab (code was run with Matlab Release 2018a)
-- R 3.4.3
-  - `tidyr` (0.8.3)
-  - `rdrobust` (0.99.4)
-  - the file "`0_setup.R`" will install all dependencies (latest version), and should be run once prior to running other programs.
+### Memory, storage and hardware Requirements
 
-Portions of the code use bash scripting, which may require Linux.
+The code was last run on a **Intel-based laptop with Linux Ubuntu 22.04.5 LTS (Jammy Jellyfish) with 1TB of total storage**. Information on number of CPUs and cores is posted below: 
 
-Portions of the code use Powershell scripting, which may require Windows 10 or higher.
+- CPU(s):                               22
+- Thread(s) per core:                   2
+- Core(s) per socket:                   16
+- Socket(s):                            1 
 
-### Controlled Randomness
-
-> INSTRUCTIONS: Some estimation code uses random numbers, almost always provided by pseudorandom number generators (PRNGs). For reproducibility purposes, these should be provided with a deterministic seed, so that the sequence of numbers provided is the same for the original author and any replicators. While this is not always possible, it is a requirement by many journals' policies. The seed should be set once, and not use a time-stamp. If using parallel processing, special care needs to be taken. If using multiple programs in sequence, care must be taken on how to call these programs, ideally from a main program, so that the sequence is not altered. If no PRNG is used, check the other box.
-
-- [ ] Random seed is set at line _____ of program ______
-- [ ] No Pseudo random generator is used in the analysis described here.
-
-### Memory, Runtime, Storage Requirements
-
-> INSTRUCTIONS: Memory and compute-time requirements may also be relevant or even critical. Some example text follows. It may be useful to break this out by Table/Figure/section of processing. For instance, some estimation routines might run for weeks, but data prep and creating figures might only take a few minutes. You should also describe how much storage is required in addition to the space visible in the typical repository, for instance, because data will be unzipped, data downloaded, or temporary files written.
-
-#### Summary
-
-Approximate time needed to reproduce the analyses on a standard (CURRENT YEAR) desktop machine:
-
-- [ ] <10 minutes
-- [ ] 10-60 minutes
-- [ ] 1-2 hours
-- [ ] 2-8 hours
-- [ ] 8-24 hours
-- [ ] 1-3 days
-- [ ] 3-14 days
-- [ ] > 14 days
-
-Approximate storage space needed:
-
-- [ ] < 25 MBytes
-- [ ] 25 MB - 250 MB
-- [ ] 250 MB - 2 GB
-- [ ] 2 GB - 25 GB
-- [ ] 25 GB - 250 GB
-- [ ] > 250 GB
-
-- [ ] Not feasible to run on a desktop machine, as described below.
-
-#### Details
-
-The code was last run on a **4-core Intel-based laptop with MacOS version 10.14.4 with 200GB of free space**. 
-
-Portions of the code were last run on a **32-core Intel server with 1024 GB of RAM, 12 TB of fast local storage**. Computation took **734 hours**. 
-
-Portions of the code were last run on a **12-node AWS R3 cluster, consuming 20,000 core-hours, with 2TB of attached storage**.  
-
-> INSTRUCTIONS: Identifiying hardware and OS can be obtained through a variety of ways:
-> Some of these details can be found as follows:
->
-> - (Windows) by right-clicking on "This PC" in File Explorer and choosing "Properties"
-> - (Mac) Apple-menu > "About this Mac"
-> - (Linux) see code in [linux-system-info.sh](https://github.com/AEADataEditor/replication-template/blob/master/tools/linux-system-info.sh)`
-
+The project takes up around 000GB of storage.
 
 ## Description of programs/code
 
