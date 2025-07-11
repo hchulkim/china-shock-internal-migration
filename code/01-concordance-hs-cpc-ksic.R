@@ -18,7 +18,7 @@
   # hs17 to cpc2.1 to ksic10
 
 if (!require(pacman)) (install.packages("pacman"))
-pacman::p_load(fs, here, data.table, concordance)
+pacman::p_load(fs, here, data.table, tidyverse, concordance)
 
 
 
