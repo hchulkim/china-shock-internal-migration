@@ -55,6 +55,7 @@ Portions of the code use bash scripting, which may require Linux or Unix-like te
 
 The code was last run on a **Intel-based laptop with Linux Ubuntu 22.04.5 LTS (Jammy Jellyfish) with 1TB of total storage**. Information on number of CPUs and cores is posted below: 
 
+- CPU(s)                                22 
 - Thread(s) per core:                   2
 - Core(s) per socket:                   16
 - Socket(s):                            1 
