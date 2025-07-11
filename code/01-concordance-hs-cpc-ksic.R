@@ -18,14 +18,13 @@
   # hs17 to cpc2.1 to ksic10
 
 if (!require(pacman)) (install.packages("pacman"))
-pacman::p_load(fs, here, data.table, tidyverse, concordance)
+pacman::p_load(fs, here, tidyverse, concordance)
 
 
 
 
 
 # first refine cpc 2 to cpc 2.1 table by taking care of cases where cpc2:cpc2.1 = 1:n
-
 cpc2_cpc21 <- read_csv("data/concordance/hscode/CPCv2_CPCv21.csv")
 
 
